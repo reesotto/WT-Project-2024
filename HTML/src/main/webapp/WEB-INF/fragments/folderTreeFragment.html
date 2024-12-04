@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Subfolder Fragment</title>
+</head>
+<body>
+    <section th:fragment="folderTree">
+    <ul>
+    	<li th:each="folder : ${folders}">
+    		 <a th:href="@{/ShowFolderContent(id=${folder.folderId})}" th:text="${folder.name}">Folder prototype</a>
+        	<!-- No link  <span th:text="${folder.name}">Folder prototype </span> -->
+        	<section th:include="@{WEB-INF/fragments/folderTreeFragment.html} :: folderTree" th:with="folders=${folder.subFolders}"></section>
+    	</li>	
+    </ul>
+    </section>
+</body>
+</html>
+<!-- Used 2nd solution https://stackoverflow.com/questions/25032838/how-to-render-menu-using-thymeleaf-recursively -->

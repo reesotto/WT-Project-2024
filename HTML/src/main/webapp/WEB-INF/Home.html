@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <meta charset="UTF-8">
+    <title>File Management System</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>
+    <!-- Logout link -->
+    <div class="logout">
+        <a class="linkButton" href="Logout">Logout</a>
+    </div>
+
+	<div class="container">
+		<h1>File management system - Home</h1>
+		<h2>Welcome back <span th:text="${user}">user</span></h2>
+	</div>
+
+	<div class="folders-tree">
+		<h2>Folders Tree</h2>
+		<p th:text=${homeMessage}>Message</p>
+		
+		<!--2nd solution https://stackoverflow.com/questions/25032838/how-to-render-menu-using-thymeleaf-recursively -->
+		<section th:include="@{WEB-INF/fragments/folderTreeFragment.html} :: folderTree" th:with="folders=${rootFolders}"></section>
+	</div>
+
+	<!-- Footer for CreateDocumentServlet -->
+    <div class="footer">
+        <a class="linkButton" href="DocumentManager">Document manager</a>
+        <a class="linkButton" href="FolderManager">Folder manager</a>
+    </div>
+</body>
+</html>

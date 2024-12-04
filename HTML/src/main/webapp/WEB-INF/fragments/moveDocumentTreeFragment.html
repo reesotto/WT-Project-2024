@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Moving Folders Fragment</title>
+</head>
+<body>
+    <section th:fragment="folderTree">
+    <ul>
+    	<li th:each="folder : ${folders}">
+    		<form class="folder-form" action="MoveDocument" method="POST">
+    			<input type="hidden" name="folderId" th:value="${folder.folderId}">
+    			<input type="hidden" name="documentId" th:value="${document.documentId}">
+    			<input class="folder-submit" type="submit" th:if="${document.folderLocation != folder.folderId}" th:value="${folder.name}">
+    		</form>
+        	<section th:include="@{WEB-INF/fragments/moveDocumentTreeFragment.html} :: folderTree" th:with="folders=${folder.subFolders}, document=${document}"></section>
+    	</li>	
+    </ul>
+    </section>
+</body>
+</html>
+<!-- Used 2nd solution https://stackoverflow.com/questions/25032838/how-to-render-menu-using-thymeleaf-recursively -->

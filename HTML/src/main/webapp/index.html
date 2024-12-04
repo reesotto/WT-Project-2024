@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Management System</title>
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    <h1>File management system</h1>
+
+    <h2>LOGIN</h2>
+    <form action="Login" method="POST">
+		Username: <input type="text" name="username" pattern="^[a-zA-Z0-9]*$" title="Only letters and numbers are allowed." required> <br>
+		<br> Password: <input type="password" name="password" required> <br>
+		<br> <input type="submit" value="Login">
+		<p class="thymeleaf-outcome" th:text="${loginOutcome}"></p>
+	</form>
+
+	<h2>REGISTER</h2>
+    <form action="Register" method="POST">
+		Username: <input type="text" name="username" pattern="^[a-zA-Z0-9]*$" title="Only letters and numbers are allowed." required> <br>
+		<br> Password: <input type="password" name="password" required> <br>
+		<br> Email: <input type="email" name="email" title="Please enter a valid email address (e.g., user@example.com)" required> <br>
+		<br> <input type="submit" value="Register"> <br>
+		<p class="thymeleaf-outcome" th:text="${registerOutcome}"></p>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    padding: 20px;
+    
+    border: 1px solid white;
+    background-color: #000000; 
+    text-align: right;
+}
+
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 60%;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid white;
+    font-family: monospace;
+}
+
+/* Stile del pulsante */
+input[type="submit"] {
+    background-color: white;
+    color: #000000;
+    padding: 10px 20px;
+    font-family: monospace;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+input[type="submit"]:hover {
+    background-color: grey;
+}
+
+
+.thymeleaf-outcome {
+	text-align: center;
+	font-size: 14px;
+}

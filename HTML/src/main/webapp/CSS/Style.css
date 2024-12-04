@@ -1,0 +1,135 @@
+
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Logout style*/
+.logout {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.back {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.linkButton {
+    color: black;
+    background-color: white;
+    padding: 10px 20px;
+    text-decoration: underline;
+}
+
+.linkButton:hover{
+	background-color: grey;
+}
+
+a {
+	color: white;
+	text-decoration: underline;
+	font-size: 12px;
+}
+
+/* Footer style*/
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*General title style*/
+h1 {
+    margin: 20px 0;
+}
+
+.folders-tree, .content {
+    border: 1px solid white;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    padding: 20px;
+    
+    border: 1px solid white;
+    background-color: #000000; 
+    text-align: right;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 60%;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid white;
+    font-family: monospace;
+}
+
+.folder-form{
+	display: inline-block;
+	margin: 0 auto;
+	width: auto;
+	padding: 0px;
+	
+	border: 0px;
+	background-color: transparent;
+	text-align: left;
+	
+}
+
+.folder-submit[type="submit"]{
+	 width: auto;
+	 padding: 0;
+	 background-color: transparent;
+     border: 0px;
+     color: white;
+     font-size:12px;
+     font-family: monospace;
+     text-decoration:underline;
+}
+.folder-submit[type="submit"]:hover{
+	background-color: transparent;
+}
+
+/* Stile del pulsante */
+input[type="submit"] {
+    background-color: white;
+    color: #000000;
+    padding: 10px 20px;
+    font-family: monospace;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+input[type="submit"]:hover {
+    background-color: grey;
+}
+
+.thymeleaf-outcome{
+	text-align: center;
+	font-size: 14px;
+}
+
+textarea{
+	background-color: black;
+	font-family: monospace;
+	color: white;
+	border: 1px solid white;
+	width: 60%;
+    padding: 10px;
+	
+}

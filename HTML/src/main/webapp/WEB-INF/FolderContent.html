@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <meta charset="UTF-8">
+    <title>File Management System</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>
+	<!-- Logout link -->
+    <div class="logout">
+        <a class="linkButton" href="Logout">Logout</a>
+    </div>
+    
+    <!-- Back link -->
+    <div class="back">
+        <a class="linkButton" href="Home">Back</a>
+    </div>
+
+	<div class="container">
+		<h1>Folder: <span th:text=${folder.name}>Folder name</span></h1>
+		<p>Date of creation: <span th:text="${#dates.format(folder.date, 'dd-MM-yyyy')}">01/01/2000</span></p>
+	</div>
+	<div class="content">
+	<p>Folders</p>
+	<a th:if="${folder.parentFolder != null}" th:href="@{/ShowFolderContent(id=${folder.parentFolder})}">...</a>
+	<ul>
+		<li th:each="subfolder : ${folder.subFolders}">
+			<a th:href="@{/ShowFolderContent(id=${subfolder.folderId})}" th:text="${subfolder.name}">Folder prototype</a>
+		</li>
+	</ul>
+	<p>Documents</p>
+	<ul>
+		<li th:each="document : ${documents}">
+			<p>
+			<span th:text="${document.name}"></span>.<span th:text="${document.type}"></span>
+			<a th:href="@{/DocumentDetails(id=${document.documentId})}" th:text="'>access<'" ></a>
+			<a th:href="@{/AvailableFolders(id=${document.documentId})}" th:text="'>move<'"></a>
+			</p>
+		</li>
+	</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <meta charset="UTF-8">
+    <title>File Management System - Folder Creation</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>
+ 	<!-- Logout link -->
+    <div class="logout">
+        <a class="linkButton" href="Logout">Logout</a>
+    </div>
+    
+    <!-- Back link -->
+    <div class="back">
+        <a class="linkButton" href="Home">Back</a>
+    </div>
+    
+    <div class="container">
+		<h2>DOCUMENT CREATION</h2>
+		<form action="CreateDocument" method="POST">
+		Name: <input type="text" name="name" pattern="^[a-zA-Z0-9 ]+\.[a-zA-Z0-9]{1,4}$" placeholder="Example: namefile.doc, music.mp3, website.html, hello world.c" required> <br>
+		<br> Path location: <input type="text" name="folderpath" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*(\/[a-zA-Z0-9]+( [a-zA-Z0-9]+)*)*$" placeholder="Example: path/to/folder" required> <br>
+		<br> Summary: <textarea name="summary" placeholder="Enter a brief summary of the document, max length is 255 characters." required maxlength="255"></textarea> <br>
+		<br> <input type="submit" value="Create">
+    
+		<p class="thymeleaf-outcome" th:text="${createDocumentOutcome}"></p>
+		</form>
+		
+		<!--  
+		<h2>DOCUMENT DELETE</h2>
+		<form action="DeleteDocument" method="POST">
+		Name: <input type="text" name="name" pattern="^[a-zA-Z0-9]+\.([a-zA-Z0-9]{1,4})$" title="(Example: namefile.doc, music.mp3, website.html)" required> <br>
+		<br> Path location: <input type="text" name="folderpath" pattern="^([a-zA-Z0-9]+)(/[a-zA-Z0-9]+)*$" title="Example: path/to/folder." required> <br>
+		<br> <input type="submit" value="Delete">
+		<p class="thymeleaf-outcome" th:text="${deleteDocumentOutcome}"></p>
+		</form>
+		-->
+	</div>
+</body>
+</html>
