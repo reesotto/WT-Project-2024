@@ -1,0 +1,167 @@
+
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Logout style*/
+.logout {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight: 400;    
+}
+
+
+.linkButton {
+    color: black;
+    background-color: white;
+    padding: 10px 20px;
+    text-decoration: underline;
+	font-weight: 400;
+}
+
+.linkButton:hover{
+	background-color: grey;
+	cursor:pointer;
+}
+
+.closebutton{
+	color: black;
+    background-color: white;
+    padding: 10px 20px;
+    font-weight: 400;
+    text-align:center;
+}
+
+.closebutton:hover{
+	background-color: grey;
+	cursor:pointer;
+}
+
+.creationButton{
+	color: black;
+    background-color: white;
+    padding:3px 5px;
+    font-weight: 400;
+}
+.creationButton:hover{
+	background-color: grey;
+	cursor:pointer;
+}
+
+a {
+	color: white;
+	text-decoration: underline;
+	font-size: 12px;
+}
+
+/* Footer style*/
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*General title style*/
+h1 {
+    margin: 20px 0;
+}
+
+.folders-tree, .content {
+    border: 1px solid white;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+}
+
+
+.folder-form fieldset {
+    border: none;
+    padding: 10px;
+    text-align: right;
+}
+
+.folder-form{
+	border: none;
+}
+
+.folder-form input[type="text"]{
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+}
+
+/* Stile del pulsante */
+.folder-form input[type="button"] {
+    background-color: white;
+    color: #000000;
+    padding: 10px 20px;
+    font-family: monospace;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.folder-form input[type="button"]:hover {
+    background-color: grey;
+}
+
+.outcome{
+	text-align: center;
+	font-size: 14px;
+}
+
+.hidden{
+	visibility: hidden;
+}
+
+.nodisplay{
+	display:none;
+}
+
+textarea{
+	margin-top: 10px;
+	background-color: black;
+	font-family: monospace;
+	color: white;
+	border: 1px solid white;
+	width: 60%;
+    padding: 10px;	
+}
+
+.folderDiv{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.fakeLink{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.documentLi{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.container-wizard{
+    height: 300px;
+    width: 500px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+#trashbin{
+	color:red;
+}
+

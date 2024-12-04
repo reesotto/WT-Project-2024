@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>File Management System</title>
+<link rel="stylesheet" href="CSS/Style.css">
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="fileManagementHome.js" charset="utf-8" defer></script>
+</head>
+<body>
+	<!-- Logout link -->
+	<div class="logout">
+		<p class="linkButton" id="logoutButton">Logout</p>
+	</div>
+
+	<div class="container">
+		<h1>File management system - Home</h1>
+		<h2 id="personalMessage">Welcome back user</h2>
+	</div>
+
+	<div class="folders-tree">
+		<h2>Folders Tree</h2>
+		<p id="alertMessage"></p>
+		<table>
+			<tr>
+				<th>
+					<div id="foldersTreeContainer" class="nodisplay"></div>
+					<ul>
+						<li id="trashbin">Trash bin</li>
+					</ul>
+				</th>
+				<th>
+					<div id="documentDetails" class="container-wizard nodisplay">
+						<p>Document details:</p>
+					</div>
+
+					<div id="createSubfolderDetails" class="container-wizard nodisplay">
+						<p>SubFolder creation:</p>
+						<p id="parentfoldername">Parent folder</p>
+						<form action="#" class="folder-form">
+							<fieldset>
+								Subfolder name: <input type="text" name="foldername"
+									pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*$" required> <br>
+								<input type="text" name="parentfolder" class="hidden" value="">
+								<input id="createSubfolderButton" type="button"
+									value="Create folder">
+								<p class="closebutton">Close</p>
+							</fieldset>
+						</form>
+					</div>
+
+					<div id="createDocumentDetails" class="container-wizard nodisplay">
+						<p>Document creation:</p>
+						<p id="documentfoldername">Document folder</p>
+						<form action="#" class="folder-form">
+							<fieldset>
+								Document name: <input type="text" name="documentname"
+									pattern="^[a-zA-Z0-9 ]+\.[a-zA-Z0-9]{1,4}$" required> <br>
+								Summary:
+								<textarea name="summary" required maxlength="255"></textarea>
+								<input type="text" name="documentfolder" class="hidden" value="">
+								<input id="createDocumentButton" type="button"
+									value="Create document">
+								<p class="closebutton">Close</p>
+							</fieldset>
+						</form>
+					</div>
+					<!--  
+					<div id="cancelDragAndDrop" class="container-wizard nodisplay">
+						<p>To cancel the transfer, drop here</p>
+					</div>
+					-->
+					
+					<div id="deleteAlert" class="container-wizard nodisplay">
+						<p>Are you sure you want to delete this file ?</p>
+						<form action="#" class="folder-form">
+							<fieldset>
+								<input type="text" name="fileId" class="hidden" value="">								
+								<input id="deleteFileButton" type="button" value="Yes">
+								<input class="closebutton" type="button" value="No">
+							</fieldset>
+						</form>
+					</div>
+					
+				</th>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

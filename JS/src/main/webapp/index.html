@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Management System</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="utils.js" charset="utf-8" defer></script>
+    <script src="loginManagement.js" charset="utf-8" defer></script>
+    <script src="registerManagement.js" charset="utf-8" defer></script>
+    
+</head>
+<body>
+    <h1>File management system</h1>
+
+    <h2>LOGIN</h2>
+	<form action="#">
+		<fieldset>
+			Username: <input type="text" name="username" required> <br>
+			Password: <input type="password" name="password" required> <br>
+			<input id="loginButton" type="button" value="Login">
+			<p id="loginMessage" class="message-outcome"></p>
+		</fieldset>
+	</form>
+
+
+	<h2>REGISTER</h2>
+	<form action="#">
+		<fieldset>
+			Username: <input type="text" name="username" required> <br>
+			Password: <input type="password" name="password" required> <br>
+			Confirm password: <input type="password" name="passwordconfirm" required> <br>
+			Email: <input type="email" name="email" required> <br>
+			<input id="registerButton" type="button" value="Register">
+			<p id="registerMessage" class="message-outcome"></p>
+		</fieldset>
+	</form>
+
+</body>
+</html>
