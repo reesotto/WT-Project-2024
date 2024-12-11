@@ -250,6 +250,7 @@
 
 		let summary = document.createElement("p");
 		summary.textContent = "Document summary: " + documentInFolder.summary;
+		summary.style.overflowWrap = "break-word"
 
 		let date = document.createElement("p");
 		date.textContent = "Creation date: " + new Date(documentInFolder.date).toLocaleDateString();

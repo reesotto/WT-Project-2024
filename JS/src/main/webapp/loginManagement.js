@@ -8,6 +8,15 @@
         // Controlla se il form è valido (rispetta i requisiti dei campi HTML5)
         if (form.checkValidity()) {
 			
+			let username = form.querySelector("input[name='username']").value;
+			let password = form.querySelector("input[name='password']").value;
+			
+			if (!username || !password) {
+				let message = "Form fields are empty!"
+				document.getElementById("loginMessage").textContent = message;
+				return;
+			}
+			
             // Chiama la funzione makeCall per fare la richiesta AJAX
             makeCall("POST", 'CheckLogin', e.target.closest("form"), function(x) {
                 // La callback gestisce la risposta del server
