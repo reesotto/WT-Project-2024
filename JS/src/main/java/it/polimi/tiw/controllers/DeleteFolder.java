@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.text.StringEscapeUtils;
 
-import it.polimi.tiw.dao.DocumentDAO;
 import it.polimi.tiw.dao.FolderDAO;
 import it.polimi.tiw.exceptions.NoAccessException;
 import it.polimi.tiw.utilities.ConnectionHandler;
@@ -68,7 +67,6 @@ public class DeleteFolder extends HttpServlet {
 			return;
 		}
 		
-		DocumentDAO documentDao = new DocumentDAO(connection);
 		FolderDAO folderDao = new FolderDAO(connection);
 		try {
 			folderDao.isFolderAccessible(userId, id);
@@ -83,6 +81,7 @@ public class DeleteFolder extends HttpServlet {
 			
 			connection.commit();
 			
+			response.setStatus(HttpServletResponse.SC_OK);
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().println(id);

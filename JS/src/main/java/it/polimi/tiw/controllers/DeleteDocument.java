@@ -73,6 +73,7 @@ public class DeleteDocument extends HttpServlet {
 			documentDao.isDocumentAccessible(userId, id);
 			documentDao.deleteDocument(id);
 			
+			response.setStatus(HttpServletResponse.SC_OK);
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().println(id);

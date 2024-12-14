@@ -9,8 +9,11 @@ Il valore predefinito è true.
 function makeCall(method, url, formElement, cback, reset = true) {
     var req = new XMLHttpRequest(); // Crea un nuovo oggetto XMLHttpRequest per la richiesta AJAX
 
+	//onreadystatechange è un parametro della request a cui do una funzione da eseguire ogni volta che la request cambia stato.
     req.onreadystatechange = function() {
-        cback(req); // Ogni volta che lo stato della richiesta cambia, viene eseguita la callback fornita (cback)
+        cback(req); 
+		/*Ogni volta che lo stato della richiesta cambia, viene eseguita la callback fornita (cback), a cui passo
+			la request stessa*/		
     };
 
     req.open(method, url); // Apre la connessione con il server, utilizzando il metodo e l'URL forniti

@@ -95,7 +95,6 @@ public class CreateFolder extends HttpServlet {
 			folderDao.createFolder(folder);
 			
 			Folder createdFolder = folderDao.getFolderByParameters(folderName, userId, parentFolderId);
-			//TODO return the JSON of the FOLDER
 			Gson gson = new Gson();
 			String json = gson.toJson(createdFolder);
 			
