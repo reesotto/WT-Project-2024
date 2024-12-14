@@ -28,6 +28,8 @@
 \end{center}
 \newpage
 \tableofcontents
+\listoffigures
+
 \newpage
 
 
@@ -41,7 +43,7 @@ After the user logs in, a homepage appears displaying a tree of their folders an
     \centering
     \includegraphics[width=1.0\textwidth]{HTML/HTMLTree.png}
     \caption{Image from the teacher's project requirements.}
-    \label{fig:ERDiagram}
+    \label{fig:HTMLTree}
 \end{figure}
 On the homepage, the user can select a folder and access a contents page, which shows a list of folders and documents within the selected folder. Each document has two links: "access" and "move". If the user clicks on "access", the document page appears showing the details of the selected document. If "move" is clicked, the homepage reappears with a message saying "You are moving document X from folder Y. Choose a destination folder." The folder containing the document is not selectable, and its name is highlighted. Once the user selects the destination folder, the document is moved, and the contents page of the destination folder is displayed. Every page, except the homepage, contains a link to return to the previous page. The user can log out from any page. Finally, a content management page, accessible from the homepage, allows the user to create a top-level folder, a subfolder inside an existing folder, or a document inside a folder.
 
@@ -144,6 +146,13 @@ User(
     \includegraphics[width=0.8\textwidth]{ERDiagram.png}
     \caption{ER diagram.}
     \label{fig:ERDiagram}
+\end{figure}
+    
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{LogicalSchema.png}
+    \caption{Logical schema.}
+    \label{fig:LogicalSchema}
 \end{figure}
 \newpage
 
@@ -586,5 +595,78 @@ Home page $\rightarrow$ drag folder $\rightarrow$ drop on trash bin $\rightarrow
 \end{tabular}
 \end{center}
 \newpage
-\paragraph{Sequence diagrams}
+\myparagraph{Sequence diagrams}
+Notes:
+\begin{itemize} 
+	\item{For the sake of keeping the diagram simple to understand, it's assumed that there is no ill-intentioned user, so only some exceptions are shown. Of course everything is checked and a proper error message is sent back if anything goes wrong.}
+	\item{Operations such as establishing and closing the connection are not shown for the same reason.}
+	\item{Session tracking sequence isn't shown for the same reason, obviously if the user's session expired they get redirected to the index page.}
+	\item{Documents with same name means they have the same name and the same format.}
+	\item{Folders with same name means they just have the same name.}
+	\item{Client side Javascript files are: fileManagementHome.js, loginManagement.js, registerManagement.js, utils.js. This last one contains the function makeCall() to do AJAX requests. Which will not be shown, using instead AJAX POST or AJAX GET for brevity. [C] means it's client-side while [S] is server-side.}
+	\item{Folder deletion was done with setAutoCommit(false) in order to delete the folder, the documents and the subfolders safely. The application doesn't have to delete the files manually as the DB tables are set with ON DELETE CASCADE.}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/Login.png}
+    \caption{Login sequence.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/Register.png}
+    \caption{Register sequence.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/HomePageLoading.png}
+    \caption{Home page loading sequence.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/CreateDocument.png}
+    \caption{Creating a document sequence.}
+\end{figure}
+    
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/CreateFolder.png}
+    \caption{Creating a folder sequence.}
+\end{figure}
+        
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/MoveDocument.png}
+    \caption{Moving a document sequence.}
+\end{figure}
+    
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/DeleteDocument.png}
+    \caption{Deleting a document sequence.}
+\end{figure}    
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/DeleteFolder.png}
+    \caption{Deleting a folder sequence.}
+\end{figure}
+    
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=1.0\textwidth]{JS/SequenceDiagram/Logout.png}
+    \caption{Logout sequence.}
+\end{figure}
+
+\newpage
+\section{Final considerations}
+The application can be considered a success as it fully meets the project requirements of creating a file system website. The implementation leverages multiple technologies, including HTML, CSS, Java, JavaScript, Thymeleaf, and SQL, all of which were seamlessly integrated to develop a complete and functional application.\\
+One of the greatest challenges I encountered during this project was understanding and utilizing JavaScript, a language I had never used before. Fortunately, the resources provided by the instructors, particularly on writing JavaScript and making AJAX requests, were invaluable in overcoming this hurdle.
+My workflow began with designing the database, which I iterated on two to three times before finalizing the current structure. I am particularly proud of the database design, as I believe it is the most efficient and robust aspect of the project.\\
+The application also has potential for future improvements, such as introducing an admin role with the ability to view all folders and documents across users or implementing the functionality to move folders, which was outside the scope of this project.\\
+This project has been instrumental in solidifying my skills in Java and in designing complex web applications. The experience of integrating diverse technologies and managing data within an SQL environment proved to be both challenging and rewarding. Overcoming these challenges significantly enhanced my problem-solving abilities. The final product is a functional, scalable solution with ample room for further enhancements and features.
+        
 \end{document}
