@@ -48,7 +48,7 @@ Key characteristics:
 - Any modern browser (Chrome, Firefox, Edge, etc.).
 - JRE (Java Runtime Environment) or JDK (Java Development Kit).
 - MySql Server.
-**Read installation PDF for further info.**
+- **Read installation PDF for further info.**
 ---
 
 
