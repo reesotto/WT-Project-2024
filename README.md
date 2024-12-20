@@ -21,7 +21,6 @@ The application implements a document and folder management system, accessible a
 3. **Differences Between Versions**  
    - **Pure HTML**: Each interaction triggers a full page reload.
    - **JavaScript**: Interactions are managed via asynchronous requests (AJAX) without reloading the entire page.
----
 
 ## Details of the Pure HTML Version
 
@@ -30,7 +29,6 @@ Key characteristics:
 - Navigation between pages via links and buttons.
 - Feedback messages displayed through page reloads.
 - Operations for moving and managing content performed using static forms and buttons.
----
 
 ## Details of the JavaScript Version
 
@@ -40,7 +38,7 @@ Key characteristics:
 - Drag and drop for moving documents.
 - Dynamic input forms for creating folders and documents.
 - Server error handling through alert messages.
----
+
 
 ## System Requirements
 
@@ -49,6 +47,6 @@ Key characteristics:
 - JRE (Java Runtime Environment) or JDK (Java Development Kit).
 - MySql Server.
 - **Read installation PDF for further info.**
----
+
 
 
